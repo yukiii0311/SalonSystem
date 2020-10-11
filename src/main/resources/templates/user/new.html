@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th=”http://www.thymeleaf.org”
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+
+<!-- Bootstrapの設定 -->
+<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
+	rel="stylesheet"></link>
+<script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+<!-- ===== このhtmlの役割 ===== -->
+<!-- ・顧客情報の入力 -->
+<!-- ・送信後：モデルへの登録（データベースへの登録は×) -->
+<!-- ========================= -->
+
+<title>顧客情報登録</title>
+</head>
+<body>
+	<h1>顧客情報登録</h1>
+
+	<!-- ===== フォーム開始 ===== -->
+	<form method="post" action="/user/new">
+		<table>
+
+			<!-- ========= -->
+			<!-- 苗字 -->
+			<!-- ========= -->
+			<tr>
+				<th>苗字</th>
+				<td><input type="text" name= "family_name"
+					th:value="${family_name}" /></td>
+			</tr>
+
+			<!-- ========= -->
+			<!-- 名前 -->
+			<!-- ========= -->
+			<tr>
+				<th>名前</th>
+				<td><input type="text" name = "first_name"
+					th:value="${first_name}" /></td>
+			</tr>
+
+			<!-- ========= -->
+			<!-- 電話番号 -->
+			<!-- ========= -->
+			<tr>
+				<th>電話番号</th>
+				<td><input type="text" name = "tel" th:value="${tel}" />
+				</td>
+			</tr>
+
+			<!-- ========= -->
+			<!-- メモ -->
+			<!-- ========= -->
+			<tr>
+				<th>メモ</th>
+				<td><input type="text" name="memo" th:value="${memo}" />
+				</td>
+			</tr>
+		</table>
+
+		<!-- ユーザー登録ボタン -->
+		<!-- btn：ボタン、btn-primary：青色 -->
+		<input type="submit" value = "次へ">
+	</form>
+
+	<!-- ===== ここまでフォーム ===== -->
+
+
+</body>
+</html>
+
